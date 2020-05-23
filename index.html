@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style type="text/css">
+    button {
+      border-style: none; 
+      outline: none;
+      color: white; 
+      background-color: transparent;
+      margin-right: 10px;
+      font-size: x-large;
+      line-height: 2;
+    }
+
+    .buttons {
+      background-color: black;
+      display: flex;
+    }
+
+    .js-video-container {
+      flex-grow: 1;
+    }
+
+    .player {
+      width: 800px; 
+      height: 600px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .empty {
+     flex-grow: 1; 
+    }
+  </style>
+
+  <title>Видеоплеер</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+</head>
+
+<body>
+  <div class="player" id="player">
+    <div class="js-video-container"></div>
+    <div class="buttons">
+      <button class="js-play-button"><i class="fa fa-play" aria-hidden="true"></i></button>
+      <button class="js-pause-button" hidden><i class="fa fa-pause" aria-hidden="true"></i></button>
+      <button class="js-volume-button"><i class="fa fa-volume-off" aria-hidden="true"></i></button>
+      <button class="js-mute-button" hidden><i class="fa fa-volume-up" aria-hidden="true"></i></button>
+      <div class="empty"></div>
+      <button class="js-fullscreen-button"><i class="fa fa-arrows-alt" aria-hidden="true"></i></button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
+  <script src="player.js"></script>
+
+  <script type="text/javascript">
+  createPlayer({
+    elementId: 'player',
+    src: 'https://dvmn.org/media/filer_public/78/db/78db3456-3fd3-4504-9ed9-d2d1fd843c0b/highest_peak.mp4'
+  });
+  </script>
+
+</body>
+</html>
